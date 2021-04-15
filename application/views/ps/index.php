@@ -67,7 +67,7 @@
                                 <div class="h7 mb-0 font-weight-bold text-gray-800">
                                     <?php
                                     foreach ($PsTerbatas as $Ad) {
-                                        echo $Ad['count(*)'] . " Pialang Saham";
+                                        echo $Ad['count(*)'] . " Pialang Asuransi";
                                     }
                                     ?>
                                 </div>
@@ -91,7 +91,7 @@
                                 <div class="h7 mb-0 font-weight-bold text-gray-800">
                                     <?php
                                     foreach ($PsDitolak as $Ad) {
-                                        echo $Ad['count(*)'] . " Pialang Saham";
+                                        echo $Ad['count(*)'] . " Pialang Asuransi";
                                     }
                                     ?>
                                 </div>
