@@ -44,7 +44,7 @@ class Auth extends CI_Controller
 					];
 					$this->session->set_userdata($data);
 					if ($user['role_id'] == 1) {
-						$check_date = $this->db->query("SELECT * FROM tb_periode ORDER BY date DESC LIMIT 1")->result();
+						$check_date = $this->db->query("SELECT * FROM tb_periode ORDER BY id DESC LIMIT 1")->result();
 						foreach ($check_date as $cd) {
 							$latest_date = $cd->date;
 						}
@@ -90,6 +90,7 @@ class Auth extends CI_Controller
 							}
 
 							$input = $month . $today_exp[0];
+							
 							$ins_array = array(
 								'date' => $today,
 								'keterangan' => $input
@@ -100,7 +101,7 @@ class Auth extends CI_Controller
 							redirect('dashboard');
 						}
 					} else {
-						$check_date = $this->db->query("SELECT * FROM tb_periode ORDER BY date ASC LIMIT 1")->result();
+						$check_date = $this->db->query("SELECT * FROM tb_periode ORDER BY id DESC LIMIT 1")->result();
 						foreach ($check_date as $cd) {
 							$latest_date = $cd->date;
 						}
@@ -146,6 +147,7 @@ class Auth extends CI_Controller
 							}
 
 							$input = $month . $today_exp[0];
+							
 							$ins_array = array(
 								'date' => $today,
 								'keterangan' => $input

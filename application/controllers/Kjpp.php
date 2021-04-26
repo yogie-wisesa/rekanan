@@ -154,7 +154,7 @@ class Kjpp extends CI_Controller
             $no = 1;
 
             $where1 = "";
-            $get1 = $this->KjppModel->GetKjpp('WHERE dateCreateKjpp LIKE "%' . $_POST['periode'] . '%" AND dateDeleteKjpp = "0000-00-00" AND id_status <> 3 ')->result();
+            $get1 = $this->KjppModel->GetKjpp('WHERE jatuhTempoKjpp LIKE "%' . $_POST['periode'] . '%" AND dateDeleteKjpp = "0000-00-00" AND id_status <> 3 ')->result();
             foreach ($get1 as $g1) {
                 $id_status = $g1->id_status;
                 $check6 = $this->KjppModel->GetStatus("WHERE id = " . $id_status)->result();
@@ -196,7 +196,7 @@ class Kjpp extends CI_Controller
             $get1 = $this->KjppModel->GetPenilaiPublik($where1)->result();
             foreach ($get1 as $g1) {
                 $id_perusahaan = $g1->id_perusahanKjpp;
-                $where2 = "WHERE id = " . $id_perusahaan . " AND dateCreateKjpp LIKE '%" . $_POST['periode'] . "%' AND dateDeleteKjpp = '0000-00-00' AND id_status <> 3 ";
+                $where2 = "WHERE id = " . $id_perusahaan . " AND jatuhTempoKjpp LIKE '%" . $_POST['periode'] . "%' AND dateDeleteKjpp = '0000-00-00' AND id_status <> 3 ";
                 $get2 = $this->KjppModel->GetKjpp($where2)->result();
 
                 foreach ($get2 as $g2) {

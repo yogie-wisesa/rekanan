@@ -149,7 +149,7 @@ class Kap extends CI_Controller
             $objek = "View";
 
             $where1 = "";
-            $get1 = $this->KapModel->GetKap('WHERE dateCreatePerusahaanKap LIKE "%' . $_POST['periode'] . '%" AND dateDeletePerusahaanKap = "0000-00-00 AND id_statusPerusahaan <> 3 "')->result();
+            $get1 = $this->KapModel->GetKap('WHERE jatuhTempoKap LIKE "%' . $_POST['periode'] . '%" AND dateDeletePerusahaanKap = "0000-00-00 AND id_statusPerusahaan <> 3 "')->result();
             foreach ($get1 as $g1) {
 
                 $id_status = $g1->id_statusPerusahaan;
